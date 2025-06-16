@@ -1,0 +1,797 @@
+:root {
+  /* Arka plan renk değişkenlerini kaldırdık, çünkü artık resim kullanıyoruz. */
+  --text-color: #222;
+  --primary: #555;
+  --card-bg: #fff;
+  --border: #ccc;
+  --main-card-bg: #fff; /* Ana kartlar için beyaz arka plan */
+  --main-card-hover-bg: #f8f8f8; /* Ana kartlar hover için hafif gri */
+  --button-bg: #ccc; /* "Back to Main" butonu için gri arka plan */
+  --button-hover-bg: #a0a0a0; /* Buton hover gri rengi */
+  --button-text: #333; /* Buton yazı rengi */
+  --nav-hover-color: #777; /* Navigasyon hover gri rengi */
+  --social-icon-hover-color: #777; /* SOSYAL İKON HOVER RENGİ İÇİN YENİ DEĞİŞKEN */
+  --heading-color: #333; /* Açık mod başlık rengi (daha koyu gri) */
+}
+
+body.dark-mode {
+  /* Arka plan renk değişkenlerini kaldırdık, çünkü artık resim kullanıyoruz. */
+  --text-color: #ddd;
+  --primary: #aaa;
+  --card-bg: #2c2c2c;
+  --border: #444;
+  --main-card-bg: #3a3a3a; /* Koyu modda ana kartlar koyu kalmaya devam ediyor */
+  --main-card-hover-bg: #4a4a4a; /* Koyu modda ana kartlar hover koyu kalmaya devam ediyor */
+  --button-bg: #555; /* Koyu mod "Back to Main" butonu gri */
+  --button-hover-bg: #666; /* Koyu mod buton hover gri */
+  --button-text: #eee; /* Koyu mod buton yazı rengi */
+  --nav-hover-color: #999; /* Navigasyon hover koyu gri rengi */
+  --social-icon-hover-color: #999; /* SOSYAL İKON HOVER RENGİ İÇİN YENİ DEĞİŞKEN (KOYU MOD) */
+  --heading-color: #999; /* Koyu mod başlık rengi (açık mavi-gri tonu) */
+}
+
+/* Yeni Arka Plan Div'i için Stil */
+.background-parallax {
+  position: fixed; /* Sabit konumda kalsın */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/background_wave.jpg'); /* Resminizin yolu */
+  background-size: cover; /* Resmi tüm alanı kaplayacak şekilde ölçekle */
+  background-position: center center; /* Resmi ortala */
+  z-index: -1; /* İçeriğin arkasında kalsın */
+  transition: transform 0.1s ease-out; /* Hareket için yumuşak geçiş */
+  will-change: transform; /* Performans iyileştirmesi */
+  filter: brightness(0.8) contrast(1.2); /* Hafif ton ayarları */
+}
+
+body.dark-mode .background-parallax {
+  filter: brightness(0.5) contrast(1.5) grayscale(0.2); /* Koyu modda daha koyu ve biraz grimsi */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Montserrat eklendi */
+  /* background ve background-attachment artık .background-parallax div'i tarafından yönetiliyor */
+  background: none; /* Body'nin kendi arka planını kapat */
+  background-attachment: scroll; /* Scroll olarak bırak, çünkü paralaks div'i fixed */
+  color: var(--text-color);
+  transition: color 0.5s ease; /* Renk geçişini koru */
+  animation: none; /* Body'nin arka plan animasyonunu kapat */
+}
+
+/* Top-bar'ın arka planı için body'nin background değişkenini kullanıyordu.
+   Şimdi doğrudan bir renk verebiliriz veya opaklığını ayarlayabiliriz. */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* background-color: var(--background); yerine saydam bir renk verebiliriz */
+  background-color: rgba(255, 255, 255, 0.8); /* Açık modda hafif şeffaf beyaz */
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(5px); /* Arka planı hafif bulanıklaştır */
+  -webkit-backdrop-filter: blur(5px); /* Safari desteği */
+}
+
+body.dark-mode .top-bar {
+  background-color: rgba(0, 0, 0, 0.6); /* Koyu modda hafif şeffaf siyah */
+}
+
+
+header {
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color); /* Yeni başlık rengi değişkeni */
+  transition: color 0.3s ease;
+}
+
+nav {
+  /* background-color: var(--card-bg); yerine saydam bir renk verebiliriz */
+  background-color: rgba(255, 255, 255, 0.7); /* Açık modda hafif şeffaf beyaz */
+  border-top: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(3px); /* Arka planı hafif bulanıklaştır */
+  -webkit-backdrop-filter: blur(3px); /* Safari desteği */
+}
+
+body.dark-mode nav {
+  background-color: rgba(0, 0, 0, 0.5); /* Koyu modda hafif şeffaf siyah */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  display: block;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links li a .fa-house {
+    font-size: 1.2rem;
+}
+
+.nav-links li a:hover {
+  color: var(--nav-hover-color);
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-hover-color);
+  transition: width 0.3s ease-out;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  position: relative; /* İçerik paralaks div'inin üzerinde kalsın */
+  z-index: 1; /* Arka planın önünde yer alması için */
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--heading-color); /* Yeni başlık rengi değişkeni */
+  transition: color 0.3s ease;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.main-about-section {
+  padding: 2rem 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+}
+
+#main-cards-section {
+  padding: 2rem 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.main-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.main-card {
+  background-color: var(--main-card-bg); /* Değişken kullanıldı */
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+}
+
+.main-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--main-card-hover-bg); /* Değişken kullanıldı */
+}
+
+.main-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color); /* Yeni başlık rengi değişkeni */
+  font-size: 1.5rem;
+}
+
+.main-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.detail-section {
+  display: none; /* Başlangıçta gizli */
+  padding-top: 0;
+}
+
+.detail-section.active {
+  display: block; /* Aktif olduğunda göster */
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInSection 0.8s ease-out forwards;
+}
+
+@keyframes fadeInSection {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.detail-section h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--heading-color); /* Yeni başlık rengi değişkeni */
+    font-family: 'Montserrat', sans-serif; /* Tüm başlıklar için Montserrat */
+    font-weight: 700; /* Kalınlık ayarı */
+}
+
+.hidden-content {
+  display: none !important;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* collapsible-card içeren bölümler için alt alta sıralama */
+.collapsible-section-cards {
+    flex-direction: column; /* Kartların alt alta sıralanması için */
+}
+
+/* Genel kart stili */
+.card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: default; /* collapsible olmayan kartlar için */
+  position: relative; /* İçerik kaydırma için */
+  overflow: hidden; /* Taşmayı gizle */
+
+  /* Kartların başlangıç durumunu tanımla, .fade-in bu değerleri değiştirecek */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Kartların animasyonu sadece .fade-in sınıfı eklendiğinde çalışacak */
+.card.fade-in {
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* collapsible-card için özel stiller */
+.collapsible-card {
+    cursor: pointer; /* collapsible kartlar için tıklanabilir imleç */
+    min-height: 100px; /* Başlangıç minimum yüksekliği */
+    max-height: 100px; /* Başlangıç maksimum yüksekliği */
+    max-width: 400px; /* Başlangıç genişliği (dikdörtgen) */
+    box-sizing: border-box; /* Padding'i genişliğe dahil et */
+    /* max-width ve max-height geçişleri */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, max-width 0.5s ease-out, max-height 0.5s ease-out;
+    
+    /* Önemli: Bu kart açıldığında içeriği taşıyorsa kaydırma çubuğu çıksın */
+    overflow: hidden; /* Başlangıçta taşan içeriği gizle */
+}
+
+.collapsible-card.active {
+    max-width: 800px; /* Tıklandığında genişleyeceği değer */
+    max-height: 500px; /* Yeterince büyük bir değer vererek içeriğe göre açılmasını sağlarız */
+    
+    /* Burası ÖNEMLİ değişiklik: Kart aktif olduğunda içeriği kaydırılabilir yap */
+    overflow-y: auto; /* Yüksekliği taşan içeriği dikeyde kaydırılabilir yapar */
+}
+
+.collapsible-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color); /* Yeni başlık rengi değişkeni */
+    font-family: 'Montserrat', sans-serif; /* Tüm başlıklar için Montserrat */
+    font-size: 1.2rem;
+    transition: margin-bottom 0.3s ease-out; /* Başlık alt boşluğu animasyonu */
+}
+
+/* Gizlenecek ve gösterilecek detaylar için genel stil */
+.card-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden; /* Taşmayı gizle */
+  /* max-height ve opacity geçişleri içeriğin açılmasını sağlar */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
+  padding-top: 0;
+  padding-left: 0; /* Başlangıçta soldan boşluk yok */
+  white-space: normal; /* İçeriğin kaymasını engeller */
+
+  display: flex; /* İçindeki öğeleri esnek kutu olarak düzenler */
+  flex-direction: row; /* Elemanları yan yana sırala */
+  align-items: flex-start; /* Üstten hizala */
+  gap: 15px; /* Resim ve metin arası boşluk */
+}
+
+/* Kart aktif olduğunda detayları göster */
+.collapsible-card.active .card-details {
+  max-height: 400px; /* İçeriğin muhtemel max yüksekliği. Daha uzun içerik için artırılabilir. */
+  opacity: 1; /* Görünür yap */
+  padding-top: 10px; /* Üstten boşluk */
+  padding-left: 10px; /* Sağa doğru genişlerken içerik için soldan boşluk */
+  overflow: visible; /* Kartın içine sığmayan bir resim olursa bile görünsün */
+}
+
+/* Detay içeriğini saran div */
+.details-content {
+    flex-grow: 1; /* Mevcut alanı kaplaması için genişlesin */
+    min-width: 0; /* İçerik taşması durumunda esneklik sağlar */
+}
+
+/* Detay resmini saran div */
+.details-image-container {
+    flex-shrink: 0; /* Küçülmesini engelle */
+    width: 200px; /* Varsayılan genişlik, kart genişlediğinde büyütülecek */
+    height: auto; /* Yüksekliği içeriğine göre otomatik ayarla */
+    max-height: 100%; /* Kapsayıcı yüksekliğini geçmesin */
+    display: flex;
+    justify-content: flex-end; /* İçindeki resmi sağa yasla */
+    align-items: flex-start; /* İçindeki resmi yukarıdan hizala */
+    border-radius: 4px; /* Köşeleri yuvarlak yap */
+    overflow: hidden; /* Resim taşarsa gizle */
+    /* Resmin başlangıçta gizli olmasını sağla */
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s; /* Geçiş ve gecikme ekle (kart genişledikten sonra görünsün) */
+}
+
+/* Kart aktif olduğunda resim kapsayıcısını görünür yap */
+.collapsible-card.active .details-image-container {
+    opacity: 1; /* Görünür yap */
+    /* Kart genişliğine yakın bir boyuta ulaşmasını sağlamak için */
+    /* Örneğin, kart 800px genişlerse, bu 300-400px arası olabilir. */
+    width: 350px; /* Genişlemiş kartın %'si veya sabit bir değer */
+    max-width: 40%; /* Kartın genişliğinin maksimum %40'ını kaplasın */
+}
+
+.detail-image {
+    max-width: 100%; /* Kapsayıcısına sığsın */
+    height: auto; /* Oranlarını koruyarak yüksekliği otomatik ayarla */
+    display: block; /* Altındaki boşluğu engelle */
+    object-fit: contain; /* Oranını koruyarak sığdır (ve 'cover' deneyebilirsiniz) */
+}
+
+/* Sosyal Medya İkonları Animasyon */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons .icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.2);
+  color: var(--social-icon-hover-color);
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Dark mode toggle button */
+#theme-toggle {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+  margin-left: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#theme-toggle:hover {
+  color: var(--nav-hover-color);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Kart içeriği için yeni stil (music ve movie kartları için geçerli) */
+/* Normal kart içeriği, collapsible olmayanlar */
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.card-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0; /* Küçülmesini engeller */
+}
+
+.card-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0; /* İçeriğin taşmasını engeller */
+}
+
+.card-text p {
+    margin: 0;
+    font-weight: bold;
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+    overflow: hidden; /* Taşmayı gizler */
+    text-overflow: ellipsis; /* Taşmayı üç nokta ile gösterir */
+}
+
+/* İkon linkleri için genel stil */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-link:hover {
+  transform: scale(1.05);
+  color: var(--nav-hover-color);
+}
+
+/* Küçük ikonlar için boyut (Font Awesome ve img) */
+.icon-link .fa-brands, .icon-link .icon-img {
+    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+}
+
+/* Section giriş animasyonu (sadece ilk görünür olduğunda) */
+.animated-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* "Ana Menüye Dön" butonu stili */
+.back-to-home-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 12px 25px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+
+.back-to-home-btn:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* collapsible-card içinde olmayan p etiketleri için margin */
+/* Genel .card içinde h3'ten sonraki p etiketleri için */
+.card:not(.collapsible-card) p {
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+/* collapsible-card içinde olan p etiketleri için */
+.collapsible-card .card-details p {
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    white-space: normal; /* İçeriğin sarılmasını sağlar */
+}
+
+.collapsible-card .card-details p:first-of-type {
+    margin-top: 10px;
+}
+.collapsible-card .card-details p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* New styles for nested sections */
+.nested-detail-section {
+    display: block; /* Ensure it's always displayed within its parent */
+    padding: 1.5rem; /* Padding inside the nested section */
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    margin-top: 1.5rem; /* Space between nested sections */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Lighter shadow for nested elements */
+}
+
+.nested-detail-section h2 {
+    font-size: 1.8rem; /* Slightly smaller than main section h2 */
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Alt bölümlerin içindeki ek linkler için stil */
+.additional-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center; /* Ortalamak için */
+    gap: 1rem; /* Birden fazla link kutusu olursa aralarında boşluk */
+    flex-wrap: wrap; /* Mobil görünümlerde alt alta geçişi sağlamak için */
+}
+
+.link-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px; /* Butonlara daha yakın bir padding */
+    background-color: var(--button-bg); /* Mevcut buton arka planı */
+    color: var(--button-text); /* Mevcut buton metin rengi */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem; /* Buton metin boyutuyla uyumlu */
+    cursor: pointer; /* Tıklanabilir olduğunu belirtir */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease; /* Renk geçişini ekledik */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px; /* Minimum genişlik vererek daha sağlam durmasını sağlarız */
+    justify-content: center; /* İçindeki içeriği ortalamak için */
+}
+
+.link-box:hover {
+    background-color: var(--button-hover-bg); /* Buton hover arka planı */
+    color: var(--button-text); /* Hover'da metin rengi değişmesin veya hafif değişsin */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.link-box i {
+    font-size: 1.3rem; /* İkon boyutunu biraz büyüttük */
+    margin-right: 5px; /* İkon ile metin arasına boşluk */
+}
+
+/* Dark Mode için link kutusu renkleri */
+body.dark-mode .link-box {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+body.dark-mode .link-box:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-text);
+}
+
+/* Skills Toggle Button ve İçeriği */
+.skills-toggle-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Kutucuğun maksimum genişliği */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* İçerik gizlenirken taşmayı engelle */
+    transition: all 0.5s ease-out; /* Kutucuğun genişlemesi için geçiş */
+    border: 1px solid var(--border);
+}
+
+.skills-toggle-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--main-card-bg); /* Mevcut kart arka planı */
+    color: var(--heading-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills-toggle-btn:hover {
+    background-color: var(--main-card-hover-bg);
+}
+
+body.dark-mode .skills-toggle-btn {
+    background-color: var(--main-card-bg);
+    color: var(--heading-color);
+}
+
+body.dark-mode .skills-toggle-btn:hover {
+    background-color: var(--main-card-hover-bg);
+}
+
+
+.skills-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Skills içeriği başlangıçta gizli */
+.skills-content {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 1.5rem; /* Başlangıçta padding sıfır */
+    box-sizing: border-box;
+    transition: max-height 0.7s ease-out, opacity 0.5s ease-out, padding 0.7s ease-out;
+    width: 100%;
+}
+
+/* Skills içeriği genişlediğinde */
+.skills-content.expanded {
+    max-height: 500px; /* İçeriğin yüksekliğine göre ayarlanabilir, yeterince büyük bir değer */
+    opacity: 1;
+    padding: 1.5rem; /* Genişlediğinde padding ekle */
+}
+
+.skills-content h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 15px; /* İsim ile bar arası boşluk */
+}
+
+.skill-name {
+    flex-basis: 150px; /* Beceri isimleri için sabit genişlik */
+    flex-shrink: 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.skill-bar-container {
+    flex-grow: 1;
+    background-color: var(--border); /* Çubuğun arka plan rengi */
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden; /* Animasyonun düzgün görünmesi için */
+}
+
+.skill-bar {
+    height: 100%;
+    background-color: #4CAF50; /* İlerleme çubuğunun rengi (yeşil tonu) */
+    width: 0%; /* Başlangıçta genişlik sıfır, JS ile genişleyecek */
+    border-radius: 5px;
+    transition: width 1s ease-out; /* Genişleme animasyonu */
+}
+
+body.dark-mode .skill-bar {
+    background-color: #66BB6A; /* Koyu modda daha açık yeşil */
+}
+
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+    .skill-item {
+        flex-direction: column; /* Mobil'de alt alta */
+        align-items: flex-start; /* Sola hizala */
+        gap: 5px;
+    }
+    .skill-name {
+        flex-basis: auto; /* Otomatik genişlik */
+        width: 100%;
+        text-align: left;
+    }
+    .additional-links {
+        flex-direction: column; /* Mobil'de alt alta sıralanır */
+        align-items: center; /* Ortalamak için */
+    }
+
+    .link-box {
+        width: 90%; /* Mobil'de genişliği artır */
+        max-width: 300px; /* Çok geniş olmasın */
+        margin-bottom: 10px; /* Aralarında boşluk */
+    }
+}

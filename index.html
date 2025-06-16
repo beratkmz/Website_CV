@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berat Kömez's Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="background-parallax"></div>
+
+  <header>
+    <div class="top-bar">
+      <h1>Berat Kömez</h1>
+      <div class="right-section">
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/beratkomez/" target="_blank" class="icon"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+
+          <a href="https://github.com/beratkmz" target="_blank" class="icon"
+            ><i class="fab fa-github"></i
+          ></a>
+
+          <a href="https://www.instagram.com/beratkmz?igsh=MW1hMTRucTNnMWVmZg==" target="_blank" class="icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a href="https://letterboxd.com/beratkmz/" target="_blank" class="icon"
+            ><i class="fab fa-letterboxd"></i
+          ></a>
+
+          <a href="https://open.spotify.com/user/beratkmz?si=53dd24ec1db24275" target="_blank" class="icon"
+            ><i class="fab fa-spotify"></i
+          ></a>
+
+          <a href="https://soundcloud.com/berat-komez" target="_blank" class="icon"
+            ><i class="fab fa-soundcloud"></i
+          ></a>
+
+          <a href="https://steamcommunity.com/id/Tarquella/" target="_blank" class="icon"
+            ><i class="fab fa-steam"></i
+          ></a>
+        </div>
+
+        <button id="theme-toggle" title="Toggle Dark Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link-trigger" data-target-id="about" title="Main Menu"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="#experiences" class="nav-link-trigger" data-target-id="experiences">Experiences</a></li>
+        <li><a href="#educations" class="nav-link-trigger" data-target-id="educations">Educations</a></li>
+        <li><a href="#projects" class="nav-link-trigger" data-target-id="projects">Projects</a></li>
+        <li><a href="#certificates" class="nav-link-trigger" data-target-id="certificates">Certificates</a></li>
+        <li><a href="#moreabout" class="nav-link-trigger" data-target-id="moreabout">More About Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="main-about-section animated-section">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I graduated from Çankaya University Electrical and Electronics Engineering Department
+            and I aim to work in analog and digital hardware design, communication systems and AI/ML in the future.
+            I am improving myself through projects, events and certified courses in line with my future target work areas.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="assets\foto.jpg" alt="Berat Kömez Profile" />
+        </div>
+      </div>
+
+      <div class="skills-toggle-container">
+        <button id="skills-toggle-btn" class="skills-toggle-btn">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="skills-content" class="skills-content">
+          <h3>My Skills</h3>
+          <div class="skill-item">
+            <span class="skill-name">Python, OpenCV, YOLO</span>
+            <div class="skill-bar-container">
+              <div class="skill-bar" data-level="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">PLC & RTU Programming </span>
+            <div class="skill-bar-container">
+              <div class="skill-bar" data-level="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">MATLAB & Simulink </span>
+            <div class="skill-bar-container">
+              <div class="skill-bar" data-level="65"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">GNU Radio</span>
+            <div class="skill-bar-container">
+              <div class="skill-bar" data-level="60"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">PCB Design (Altium Designer, KiCad)</span>
+            <div class="skill-bar-container">
+              <div class="skill-bar" data-level="55"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">AI / ML</span>
+            <div class="skill-bar-container">
+              <div class="skill-bar" data-level="50"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">HTML, CSS, JavaScript</span>
+            <div class="skill-bar-container">
+              <div class="skill-bar" data-level="45"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="main-cards-section">
+      <div class="main-card-container">
+        <div class="main-card" data-target="experiences">
+          <h3>Experiences</h3>
+        </div>
+        <div class="main-card" data-target="educations">
+          <h3>Educations</h3>
+        </div>
+        <div class="main-card" data-target="projects">
+          <h3>Projects</h3>
+        </div>
+        <div class="main-card" data-target="certificates">
+          <h3>Certificates</h3>
+        </div>
+        <div class="main-card" data-target="moreabout">
+          <h3>More About Me</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiences" class="detail-section">
+      <h2>Experiences</h2>
+      <div class="card-container collapsible-section-cards">
+        <div class="card collapsible-card">
+          <h3>Çankaya University - Part-Time Asistant at Sport Center</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Date: </strong>November 2024 - June 2025 · 8 mounth</p>
+              <p><strong>Location: </strong>Etimesgut, Ankara, Türkiye</p>
+              <p><strong>Skills acquired: </strong>Communication, Teamwork</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/çankaya.png" alt="Çankaya University Sport Center" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>BOTAŞ - Intern</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Date: </strong>August 2024 - August 2024 · 1 mounth</p>
+              <p><strong>Location: </strong>Etimesgut, Ankara, Türkiye</p>
+              <p><strong>Skills acquired: </strong>Ladder Programming, PLC, RTU, Motorola ACE3600 ,
+                System Tool Suite (STS), Siemens S7 1200, TIA Portal V14, Natural Gas Measurement,
+                Orificemeter, Rotarymeter, Turbine Meters, Ultrasonic Meters, Gas Chromatograph,
+                Transmitter, Flow Computer, Cathodic Protection</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/botas.jpg" alt="BOTAŞ Logo" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>ORS Bearing Inc. - Intern</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Date: </strong>August 2023 - September 2024 · 1 mounth</p>
+              <p><strong>Location: </strong>Polatlı, Ankara, Türkiye</p>
+              <p><strong>Skills acquired: </strong>Motor Control, Solar Energy, Transformer,
+                Control Systems Design, Electrical Systems, Analytical Skills, Engineering, Research</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/ors.png" alt="ORS Logo" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>Özmeta Electronic - Intern</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Date: </strong>June 2023 - July 2024 · 2 mounth</p>
+              <p><strong>Location: </strong>Kahramankazan, Ankara, Türkiye</p>
+              <p><strong>Skills acquired: </strong>Electronic Device Repair, Electronic Boards, Soldering, Teamwork</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/özmeta.png" alt="Özmeta Logo" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="back-to-home-btn">← Back to Main</button>
+    </section>
+
+    <section id="educations" class="detail-section">
+      <h2>Educations</h2>
+      <div class="card-container collapsible-section-cards">
+        <div class="card collapsible-card">
+          <h3>Çankaya University - Bachelor's Degree</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Department: </strong>Electrical Electronics Engineering</p>
+              <p><strong>Date: </strong>September 2020 - June 2025 · 5 years</p>
+              <p><strong>CUMGPA: </strong>3.19 / 4</p>
+              <p><strong>Location: </strong>Etimesgut, Ankara, Türkiye</p>
+              <p><strong>Communities and Activities: </strong></p>
+              <p>• BeeFIT Çankaya Society - Founding Member</p>
+              <p>• Çankaya University Aerospace Society (CAS) - Electronic Team Member</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/çankaya.png" alt="Çankaya University Logo" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>Nermin Mehmet Çekiç Anatolian High School</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Date: </strong>September 2016 - June 2020 · 4 years</p>
+              <p><strong>Score: </strong>85,25 / 100</p>
+              <p><strong>Location: </strong>Yenimahalle, Ankara, Türkiye</p>
+              <p><strong>Communities and Activities: </strong></p>
+              <p>• Basketball Team Player</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/nermiin.jpg" alt="Nermin Mehmet Çekiç Logo" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="back-to-home-btn">← Back to Main</button>
+    </section>
+
+    <section id="projects" class="detail-section">
+      <h2>Projects</h2>
+      <div class="card-container collapsible-section-cards">
+        <div class="card collapsible-card">
+          <h3>VTOL UAV System for Detecting Collapsed Buildings After Earthquakes</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p>The increasing frequency of disasters worldwide 
+                has become a growing concern, with post-earthquake 
+                regional assessments playing a critical role in response efforts. 
+                As a result, certain government agencies and civil rescue teams 
+                have begun utilizing drone systems to support search and rescue operations. 
+                However, these drone systems are inefficient compared to VTOL systems and 
+                lack specialization for disaster scenarios. Satellite systems are slow and 
+                fail to provide "very high" resolution imagery. Moreover, 3D point cloud mapping 
+                is significantly more accurate and effective when performed at lower altitudes, 
+                closer to the ground.</p>
+              <p>Our project integrates VTOL and fixed-wing UAVs with advanced 
+                AI to deliver rapid, high-resolution mapping, object detection, and situational 
+                analysis tailored for emergency response and disaster management. It provides 
+                data collection and processing to generate precise, actionable insights for critical 
+                sectors such as earthquake response, infrastructure inspection, and environmental monitoring.</p>
+              <p><strong>Duration: </strong> 1 year</p>
+              <p><strong>Project team size: </strong>6 people + 1 advisor</p>
+              <p><strong>Project exhibition participated in</strong> 18th R&D Project Market - Cankaya University </p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/vtol.jpg" alt="VTOL Project" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>Designing a Noise Filter for a Noisy Music File Using FIR Filter in GNU Radio</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p>The problem we are dealing with in this project is the noise
+                problem that affects wireless communication. In today's world,
+                there are various solutions to solve the noise problems, one of
+                them is to design a filter. Our goal in this project is to design
+                a suitable filter that will prevent noise for the system we design.</p>
+              <p><strong>Duration: </strong> 3 mounths</p>
+              <p><strong>Project time size: </strong>3 people</p>
+              <p><strong>Project exhibition participated in</strong> - </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="back-to-home-btn">← Back to Main</button>
+    </section>
+
+    <section id="certificates" class="detail-section">
+      <h2>Certificates</h2>
+      <div class="card-container collapsible-section-cards">
+        <div class="card collapsible-card">
+          <h3>TEI Aviation Engines School</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Certificate date: </strong>May 2025</p>
+              <p><strong>Duration: </strong>16 Week</p>
+              <p><strong>Institution: </strong>TUSAŞ Engine Industry (TEI)</p>
+              <p><strong>Skills acquired: </strong>Knowledge of aviation engines, 
+                electrical power systems design, engine control systems, 
+                avionics test processes, embedded systems and real-time control, 
+                aviation standards and certification, failure analysis and maintenance, 
+                project-based problem solving, production and test environment observation, 
+                and industry networking</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/tei.png" alt="TEI Certificate Image" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>Model, Simulate and Control a Drone in MATLAB & SIMULINK</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Certificate date: </strong>September 2024</p>
+              <p><strong>Duration: </strong>5 hours</p>
+              <p><strong>Institution: </strong> Udemy </p>
+              <p><strong>Skills acquired: </strong>Understanding drone battery systems, 
+                estimating motor/propeller performance, mapping motion to voltage signals, 
+                modeling drone dynamics (rotational & linear), using MATLAB/Simulink for simulation, 
+                implementing and tuning PID control (altitude & attitude), using core Simulink blocks.</p>           
+            </div>
+            <div class="details-image-container">
+                <img src="assets/model.png" alt="Certificate Image" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>RF and millimeter-Wave Circuit Design</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Certificate date: </strong>January 2024</p>
+              <p><strong>Duration: </strong>4 weeks</p>
+              <p><strong>Institution: </strong>Coursera (Eindhoven University of Technology)</p>
+              <p><strong>Skills acquired: </strong>RF/mmWave design knowledge, transceiver block design 
+                (LNA, PA, mixer, PLL), RF specs analysis, circuit simulation skills, real data interpretation, 
+                hands-on RF circuit building, theory-to-practice application, design process experience, RF engineering foundation.</p>          
+            </div>
+            <div class="details-image-container">
+                <img src="assets/coursera.png" alt="Certificate Image" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>YOLO From Zero to Advanced Projects YOLO v8 v9 v10</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Certificate date: </strong>December 2024</p>
+              <p><strong>Duration: </strong>13 hours</p>
+              <p><strong>Institution: </strong>Udemy</p>
+              <p><strong>Skills acquired: </strong>Detailed understanding of YOLOv8, 
+                image classification projects, object detection projects, image segmentation projects, 
+                keypoint detection projects, biomedical applications with YOLOv8, license plate recognition, 
+                YOLOv8 and Streamlit integration, computer vision projects with Streamlit.</p>             
+            </div>
+            <div class="details-image-container">
+                <img src="assets/yolo.png" alt="Certificate Image" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+        <div class="card collapsible-card">
+          <h3>Basic Network</h3>
+          <div class="card-details">
+            <div class="details-content">
+              <p><strong>Certificate date: </strong>December 2024</p>
+              <p><strong>Duration: </strong>8 hours</p>
+              <p><strong>Institution: </strong>Turkcell</p>
+              <p><strong>Skills acquired: </strong>TCP/IP, DNS, OSI, Netmask</p>
+            </div>
+            <div class="details-image-container">
+                <img src="assets/turkcell.png" alt="Certificate Image" class="detail-image clickable-image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="back-to-home-btn">← Back to Main</button>
+    </section>
+
+    <section id="moreabout" class="detail-section">
+      <h2>More About Me</h2>
+
+      <section id="music" class="nested-detail-section">
+        <h2>Favorite Artists</h2>
+        <div class="card-container"> <div class="card music-card">
+            <div class="card-content">
+              <img src="assets/sezen_aksu.jpg" alt="Sezen Aksu" class="card-image" />
+              <div class="card-text">
+                <p>Sezen Aksu</p>
+                <a href="https://open.spotify.com/intl-tr/artist/64d1rUxfizSAOE9UbMnUZd?si=NeUJE1ZTRkubbCuxI8gb5A" target="_blank" class="icon-link">
+                  <i class="fab fa-spotify"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card music-card">
+            <div class="card-content">
+              <img src="assets/sıla.jpg" alt="Sıla" class="card-image" />
+              <div class="card-text">
+                <p>Sıla</p>
+                <a href="https://open.spotify.com/intl-tr/artist/5gFPi3KWXEwA9bLEO47Ow0?si=rEgTigLgTJqdXrXLbrN9fA" target="_blank" class="icon-link">
+                  <i class="fab fa-spotify"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card music-card">
+            <div class="card-content">
+              <img src="assets/radiohead.png" alt="Radiohead" class="card-image" />
+              <div class="card-text">
+                <p>Radiohead</p>
+                <a href="https://open.spotify.com/intl-tr/artist/4Z8W4fKeB5YxbusRsdQVPb?si=ZiueT7hPS8WIa6jqGzohOA" target="_blank" class="icon-link">
+                  <i class="fab fa-spotify"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="additional-links">
+            <a href="https://open.spotify.com/user/beratkmz?si=53dd24ec1db24275" target="_blank" class="link-box">
+                <i class="fab fa-spotify"></i><span>My Spotify Profile</span>
+            </a>
+        </div>
+      </section>
+
+      <section id="movies" class="nested-detail-section">
+        <h2>Favorite Movies</h2>
+        <div class="card-container"> <div class="card movie-card">
+            <div class="card-content">
+              <img src="assets/interstealler.jpg" alt="Interstellar" class="card-image" />
+              <div class="card-text">
+                <p>Interstellar</p>
+                <a href="https://letterboxd.com/film/interstellar/" target="_blank" class="icon-link">
+                  <i class="fab fa-letterboxd"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card movie-card">
+            <div class="card-content">
+              <img src="assets/zodiac.jpg" alt="Zodiac" class="card-image" />
+              <div class="card-text">
+                <p>Zodiac</p>
+                <a href="https://letterboxd.com/film/zodiac/" target="_blank" class="icon-link">
+                  <i class="fab fa-letterboxd"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card movie-card">
+            <div class="card-content">
+              <img src="assets/manchester.jpg" alt="Manchester by the Sea" class="card-image" />
+              <div class="card-text">
+                <p>Manchester by the Sea</p>
+                <a href="https://letterboxd.com/film/manchester-by-the-sea/" target="_blank" class="icon-link">
+                  <i class="fab fa-letterboxd"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="additional-links">
+            <a href="https://letterboxd.com/beratkmz/" target="_blank" class="link-box">
+                <i class="fab fa-letterboxd"></i><span>My Letterboxd Profile</span>
+            </a>
+        </div>
+      </section>
+
+      <section id="games" class="nested-detail-section">
+        <h2>Favorite Games</h2>
+        <div class="card-container"> <div class="card">
+            <h3>Assetto Corsa</h3>
+          </div>
+          <div class="card">
+            <h3>Counter Strike 2</h3>
+          </div>
+           <div class="card">
+            <h3>FIFA Games</h3>
+          </div>
+        </div>
+        <div class="additional-links">
+            <a href="https://steamcommunity.com/id/Tarquella/" target="_blank" class="link-box">
+                <i class="fab fa-steam"></i><span>My Steam Profile</span>
+            </a>
+        </div>
+      </section>
+
+      <section id="hobbies" class="nested-detail-section">
+        <h2>Hobbies</h2>
+        <div class="card-container"> <div class="card">
+            <h3>Team Sports</h3>
+          </div>
+          <div class="card">
+            <h3>Racing Sports</h3>
+          </div>
+           <div class="card">
+            <h3>Bodybuilding / Powerlifting</h3>
+          </div>
+          <div class="card">
+            <h3>Photography</h3>
+          </div>
+          <div class="card">
+            <h3>Gardening</h3>
+          </div>
+          <div class="card">
+            <h3>Website Design :)</h3>
+          </div>
+        </div>
+      </section>
+
+      <button class="back-to-home-btn">← Back to Main</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <small>
+      Copyright © 2025 All rights reserved by Berat Kömez.
+    </small>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const icon = toggleBtn.querySelector("i");
+      if (document.body.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+      // Tema değiştiğinde arka plan resmini de yeniden konumlandır
+      updateBackgroundParallax();
+    });
+
+    const mainCards = document.querySelectorAll('.main-card');
+    const detailSections = document.querySelectorAll('.detail-section');
+    const aboutSection = document.getElementById('about');
+    const mainCardsSection = document.getElementById('main-cards-section');
+    const backToHomeButtons = document.querySelectorAll('.back-to-home-btn');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const backgroundParallax = document.querySelector('.background-parallax'); // Yeni arka plan elementi
+
+    // Başlangıçta sadece about ve main cards'ı göster, diğerlerini gizle
+    function initializePage() {
+        aboutSection.classList.remove('hidden-content');
+        mainCardsSection.classList.remove('hidden-content');
+        detailSections.forEach(section => {
+            section.classList.remove('active');
+            section.classList.add('hidden-content');
+            // Gizlenen kartların animasyon sınıflarını temizle
+            section.querySelectorAll('.card').forEach(card => {
+                card.classList.remove('fade-in');
+            });
+            // collapsible-card'ları kapalı tut
+            section.querySelectorAll('.collapsible-card').forEach(card => {
+                card.classList.remove('active');
+            });
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Sayfa başına kaydır
+    }
+
+    // Detay bölümünü gösterme ve diğerlerini gizleme fonksiyonu
+    function showDetailSection(targetId) {
+        // Tüm detay bölümlerini gizle
+        detailSections.forEach(section => {
+            section.classList.remove('active');
+            section.classList.add('hidden-content');
+            // Gizlenen kartların animasyon sınıflarını temizle
+            section.querySelectorAll('.card').forEach(card => {
+                card.classList.remove('fade-in');
+            });
+            // collapsible-card'ları kapalı tut
+            section.querySelectorAll('.collapsible-card').forEach(card => {
+                card.classList.remove('active');
+            });
+        });
+
+        // About ve main cards'ı gizle
+        aboutSection.classList.add('hidden-content');
+        mainCardsSection.classList.add('hidden-content');
+
+        // Hedeflenen detay bölümünü göster
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.remove('hidden-content');
+            targetSection.classList.add('active');
+            // Kart animasyonlarını burada tetikle
+            targetSection.querySelectorAll('.card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`; // Gecikmeleri ayarla
+                card.classList.add('fade-in'); // Animasyonu tetikle
+            });
+
+            // Detay bölümüne kaydır
+            setTimeout(() => {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+
+    // Ana kartlara tıklama olayı
+    mainCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const targetId = this.dataset.target;
+        showDetailSection(targetId);
+      });
+    });
+
+    // Ana menüye dön butonlarına tıklama olayı
+    backToHomeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            initializePage(); // Ana görünümü geri yükle
+        });
+    });
+
+    // Navigasyon linklerine tıklama olayı
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.dataset.targetId;
+
+        e.preventDefault(); // Varsayılan davranışı engelle
+
+        if (targetId === 'about') {
+          initializePage(); // Ana görünümü geri yükle
+        } else {
+          showDetailSection(targetId); // İlgili detay bölümünü göster
+        }
+      });
+    });
+
+    // Sayfa yüklendiğinde ve About bölümü görünür olduğunda animasyonu tetikle
+    const initialAnimatedSections = document.querySelectorAll('.main-about-section, #main-cards-section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    initialAnimatedSections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Sayfa yüklendiğinde başlangıç görünümünü ayarla
+    document.addEventListener('DOMContentLoaded', initializePage);
+
+
+    // Genişleyebilir kartlar için işlevsellik (collapsible-card)
+    const collapsibleCards = document.querySelectorAll('.collapsible-section-cards .collapsible-card');
+
+    collapsibleCards.forEach(card => {
+        card.addEventListener('click', function(event) {
+            // Eğer tıklanan öğe veya üst öğesi bir resimse (clickable-image), kartı toggle etme.
+            // Aksi takdirde, kartın genişlemesini/daralmasını sağlar.
+            if (!event.target.classList.contains('clickable-image') && !event.target.closest('.clickable-image')) {
+                this.classList.toggle('active');
+            }
+        });
+    });
+
+    // Arka Plan Paralaks Etkisi
+    let parallaxX = 0;
+    let parallaxY = 0;
+    const parallaxIntensity = 0.02; // Hareket yoğunluğu (0.01 - 0.05 arası iyi olabilir)
+
+    document.addEventListener('mousemove', (e) => {
+        // Fare pozisyonunu ekranın merkezine göre normalleştir (-0.5 ile 0.5 arası)
+        parallaxX = (e.clientX / window.innerWidth - 0.5) * parallaxIntensity;
+        parallaxY = (e.clientY / window.innerHeight - 0.5) * parallaxIntensity;
+        requestAnimationFrame(updateBackgroundParallax);
+    });
+
+    function updateBackgroundParallax() {
+        if (backgroundParallax) {
+            // Arka planı ters yönde hareket ettirerek paralaks efekti ver
+            backgroundParallax.style.transform = `translate(${parallaxX * -100}%, ${parallaxY * -100}%) scale(1.1)`; // % değeri ile hareket
+        }
+    }
+
+    // İlk yüklemede arka planı konumlandır
+    document.addEventListener('DOMContentLoaded', updateBackgroundParallax);
+
+
+    // Resimlerin Yeni Pencerede Açılması ve Kapatma Tuşu İşlevselliği
+    const clickableImages = document.querySelectorAll('.clickable-image'); // clickable-image sınıfına sahip tüm resimler
+
+    clickableImages.forEach(img => {
+      img.addEventListener('click', function() {
+        const imageUrl = this.dataset.fullsizeSrc || this.src; // data-fullsize-src varsa onu kullan, yoksa normal src'yi kullan
+        const windowWidth = 600; // Yeni pencere genişliği
+        const windowHeight = 400; // Yeni pencere yüksekliği
+        const windowFeatures = `width=${windowWidth},height=${windowHeight},menubar=no,location=no,resizable=yes,scrollbars=yes,status=no`;
+
+        // Yeni pencereyi aç
+        const newWindow = window.open("", "_blank", windowFeatures);
+
+        if (newWindow) {
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>${this.alt || 'Resim'}</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            min-height: 100vh;
+                            background-color: #333; /* Resim penceresi arka planı */
+                            color: #fff;
+                            font-family: sans-serif;
+                            overflow: hidden; /* Resim taşarsa kaydırma çubuğu oluşmasın */
+                        }
+                        img {
+                            max-width: 95%;
+                            max-height: 90vh; /* Ekran yüksekliğinin %90'ı */
+                            object-fit: contain;
+                            display: block;
+                            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+                        }
+                        .image-caption {
+                            margin-top: 10px;
+                            font-size: 0.9em;
+                            color: #ccc;
+                            text-align: center;
+                            max-width: 90%;
+                            word-wrap: break-word; /* Uzun metinleri sarar */
+                        }
+                        .close-btn {
+                            position: absolute;
+                            top: 10px;
+                            right: 20px;
+                            font-size: 30px;
+                            color: #fff;
+                            cursor: pointer;
+                            background: none;
+                            border: none;
+                            padding: 0;
+                            line-height: 1;
+                        }
+                        .close-btn:hover {
+                            color: #ccc;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <button class="close-btn" onclick="window.close()">×</button>
+                    <img src="${imageUrl}" alt="${this.alt || 'Resim'}">
+                    <p class="image-caption">${this.alt || ''}</p>
+                </body>
+                </html>
+            `);
+            newWindow.document.close(); // document.write() kullandıktan sonra kapatmak önemlidir.
+        } else {
+            alert('Lütfen açılır pencerelere izin verin.');
+        }
+      });
+    });
+
+    // Yeni Skills Kutucuğu İşlevselliği
+    const skillsToggleBtn = document.getElementById('skills-toggle-btn');
+    const skillsContent = document.getElementById('skills-content');
+    const skillsToggleIcon = skillsToggleBtn.querySelector('i');
+
+    // Başlangıçta beceri çubuklarını sıfırla
+    document.addEventListener('DOMContentLoaded', () => {
+        skillsContent.querySelectorAll('.skill-bar').forEach(bar => {
+            bar.style.width = '0%';
+        });
+    });
+
+    skillsToggleBtn.addEventListener('click', () => {
+        const isExpanded = skillsContent.classList.toggle('expanded');
+        skillsToggleIcon.classList.toggle('fa-chevron-down', !isExpanded);
+        skillsToggleIcon.classList.toggle('fa-chevron-up', isExpanded);
+
+        if (isExpanded) {
+            // Animasyonları başlat
+            skillsContent.querySelectorAll('.skill-bar').forEach(bar => {
+                const level = bar.dataset.level;
+                // Animasyonun görünür olduktan sonra başlaması için küçük bir gecikme
+                setTimeout(() => {
+                    bar.style.width = level + '%';
+                }, 50); 
+            });
+        } else {
+            // Animasyonları sıfırla (geri daraltıldığında)
+            skillsContent.querySelectorAll('.skill-bar').forEach(bar => {
+                bar.style.width = '0%';
+            });
+        }
+    });
+  </script>
+</body>
+</html>
